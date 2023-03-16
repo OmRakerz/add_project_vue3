@@ -8,7 +8,8 @@
 
 <script>
 export default {
-  data() {
+  name: "AdListView",
+  date() {
     return {};
   },
 };
