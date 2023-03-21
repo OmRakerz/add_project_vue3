@@ -27,7 +27,7 @@
           <v-col cols="8">
             <v-btn class="mt-3" color="warning">
               Upload
-              <v-icon right dark>mdi-cloud-upload</v-icon>
+              <v-icon right dark>mdi-cloud- upload</v-icon>
             </v-btn>
           </v-col>
         </v-row>
@@ -61,9 +61,21 @@
 
 <script>
 export default {
-  name: "NewAdView",
   data() {
-    return {};
+    return { valid: false, title: "", description: "", promo: false };
+  },
+
+  methods: {
+    createAd() {
+      if (this.$refs.form.validate()) {
+        const ad = {
+          title: this.title,
+          desc: this.description,
+          promo: this.promo,
+        };
+        console.log(ad);
+      }
+    },
   },
 };
 </script>
