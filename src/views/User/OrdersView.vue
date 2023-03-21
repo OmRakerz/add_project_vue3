@@ -10,6 +10,7 @@
                 <v-checkbox
                   :input-value="order.done"
                   color="primary"
+                  @click="markDone(order)"
                 ></v-checkbox>
               </v-list-item-action>
             </template>
@@ -39,10 +40,17 @@ export default {
           name: "Kostya",
           phone: "+7(978)000-00-05",
           adId: "1",
-          done: true,
+          done: false,
         },
       ],
     };
+  },
+
+  methods: {
+    markDone(order) {
+      order.done = !order.done;
+      console.log(order.done);
+    },
   },
 };
 </script>
