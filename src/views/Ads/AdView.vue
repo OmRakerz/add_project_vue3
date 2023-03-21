@@ -7,6 +7,7 @@
             height="300px"
             src="https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"
           ></v-img>
+
           <v-card-text>
             <h1 class="text--primary mb-3">Lorem Ipsum</h1>
             <p>
@@ -20,8 +21,10 @@
               like Aldus PageMaker including versions of Lorem Ipsum.
             </p>
           </v-card-text>
+
           <v-card-actions>
             <v-spacer></v-spacer>
+
             <v-btn class="warning" color="orange">Edit</v-btn>
             <v-btn class="success" color="green">Buy</v-btn>
           </v-card-actions>
