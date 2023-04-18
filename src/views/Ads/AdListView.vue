@@ -3,7 +3,7 @@
     <h1 class="text--secondary mb-3 mt-3">My ads</h1>
     <v-card v-for="ad in myAds" :key="ad.id" class="mx-auto" max-width="1000">
       <v-row>
-        <v-img :src="ad.src" height="175px"></v-img>
+        <v-img height="400px" :src="ad.src" cover></v-img>
         <v-spacer></v-spacer>
       </v-row>
 
@@ -29,9 +29,11 @@
 
 <script>
 export default {
+  props: ["id"],
   computed: {
-    myAds() {
-      return this.$store.getters.myAds;
+    ad() {
+      const id = this.id;
+      return this.$store.getters.adById(id);
     },
   },
 };
