@@ -1,3 +1,5 @@
+const fb = window.FB;
+
 class User {
     constructor(id, email, password) {
         this.id = id
