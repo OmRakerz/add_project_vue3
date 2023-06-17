@@ -37,6 +37,9 @@ export default {
       const id = this.id;
       return this.$store.getters.adById(id);
     },
+    isOwner() {
+      return this.ad.ownerId === this.$store.getters.user.id;
+    },
   },
   components: {
     "modal-dialog": EditAdModal,
