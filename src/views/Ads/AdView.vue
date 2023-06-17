@@ -9,23 +9,16 @@
           ></v-img>
 
           <v-card-text>
-            <h1 class="text--primary mb-3">Lorem Ipsum</h1>
+            <h1 class="text--primary mb-3">{{ ad.title }}</h1>
             <p>
-              Lorem Ipsum has been the industry's standard dummy text ever since
-              the 1500s, when an unknown printer took a galley of type and
-              scrambled it to make a type specimen book. It has survived not
-              only five centuries, but also the leap into electronic
-              typesetting, remaining essentially unchanged. It was popularised
-              in the 1960s with the release of Letraset sheets containing Lorem
-              Ipsum passages, and more recently with desktop publishing software
-              like Aldus PageMaker including versions of Lorem Ipsum.
+              {{ ad.desc }}
             </p>
           </v-card-text>
 
           <v-card-actions>
             <v-spacer></v-spacer>
 
-            <v-btn class="warning" color="orange">Edit</v-btn>
+            <modal-dialog></modal-dialog>
             <v-btn class="success" color="green">Buy</v-btn>
           </v-card-actions>
         </v-card>
@@ -35,9 +28,17 @@
 </template>
 
 <script>
+import EditAdModal from "./EditAdModal.vue";
 export default {
-  data() {
-    return {};
+  props: ["id"],
+  computed: {
+    ad() {
+      const id = this.id;
+      return this.$store.getters.adById(id);
+    },
+  },
+  components: {
+    "modal-dialog": EditAdModal,
   },
 };
 </script>
