@@ -51,7 +51,13 @@
         <v-row>
           <v-col cols="8">
             <v-spacer></v-spacer>
-            <v-btn color="success" @click="createAd">Create Ad</v-btn>
+            <v-btn
+              color="success"
+              @click="createAd"
+              :loading="loading"
+              :disabled="!valid || loading"
+              >Create Ad</v-btn
+            >
           </v-col>
         </v-row>
       </v-col>
@@ -76,6 +82,12 @@ export default {
         };
         this.$store.dispatch("createAd", ad);
       }
+    },
+  },
+
+  computed: {
+    loading() {
+      return this.$store.getters.loading;
     },
   },
 };
