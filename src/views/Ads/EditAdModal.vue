@@ -15,7 +15,21 @@
 
       <v-row justify="center">
         <v-col cols="12">
-          <v-card-text>Lorem ipsum.</v-card-text>
+          <v-card-text>
+            <v-text-field
+              name="title"
+              label="Title"
+              type="text"
+              v-model="editedTitle"
+            ></v-text-field>
+            <v-textarea
+              name="desc"
+              label="Description"
+              type="text"
+              v-model="editedDesc"
+              class="mb-3"
+            ></v-textarea>
+          </v-card-text>
         </v-col>
       </v-row>
 
@@ -37,6 +51,8 @@ export default {
   data() {
     return {
       modal: false,
+      editedTitle: "",
+      editedDesc: "",
     };
   },
 };
